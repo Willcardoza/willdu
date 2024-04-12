@@ -1,0 +1,46 @@
+---
+import HabilitesCard from '../components/HabilitesCard.astro';
+import LogoPsd from '../components/LogoPsd.astro';
+import LogoAi from '../components/LogoAi.astro';
+import LogoCorel from '../components/LogoCorel.astro';
+import LogoFigma from '../components/LogoFigma.astro';
+---
+
+<div class="bg-[#060814] bg-center px-4">
+
+    <section class="max-w-screen-md mx-auto py-28">
+
+        <header class="mb-14">
+            <h2 class="font-light text-3xl text-white">
+                Discover My Diverse <br> <strong class="font-medium text-[#05F26CF2]">Creative Skills</strong>
+            </h2>
+        </header>
+        
+        <article class="flex flex-row">
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-normal text-white">Graphic <span class="text-[#05F26CF2]">Design</span></h3>
+                <span class="text-base font-extralight text-white">
+                    I transform ideas into striking images, from distinctive logos to promotional materials and social media graphics, effectively communicating your message in a memorable way.
+                </span>
+               <ul class="flex flex-row gap-2">
+                    <li><span class="text-white font-extralight text-sm py-0.5 px-6 bg-[#060814] rounded-full border-2 border-white">Branding</span></li>
+                    <li><span class="text-white font-extralight text-sm py-0.5 px-6 bg-[#060814] rounded-full border-2 border-white">Social Media</span></li>
+                    <li><span class="text-white font-extralight text-sm py-0.5 px-6 bg-[#060814] rounded-full border-2 border-white">Logo Design</span></li>
+                    <li><span class="text-white font-extralight text-sm py-0.5 px-6 bg-[#060814] rounded-full border-2 border-white">User Interface UI/UX</span></li>
+               </ul>
+               <ul class="flex flex-row gap-2">
+                    <li><LogoPsd/></li>
+                    <li><LogoAi/></li>
+                    <li><LogoCorel/></li>
+                    <li><LogoFigma/></li>
+               </ul>
+                
+            </div>
+                
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdZ74sEF3kki5DAZ-qlpKnMGlYlt7KbBJecVbDeI6TvQ&s" alt="">
+            </div>
+        </article>
+
+    </section>
+</div>
