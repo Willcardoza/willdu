@@ -1,5 +1,19 @@
 ---
+
 import HabilitesCard from '../components/HabilitesCard.astro';
+import LogoPsd from '../components/LogoPsd.astro';
+import LogoAi from '../components/LogoAi.astro';
+import LogoCorel from '../components/LogoCorel.astro';
+import LogoFigma from '../components/LogoFigma.astro';
+import LogoPremier from '../components/LogoPremier.astro';
+import LogoAfter from '../components/LogoAfter.astro';
+import LogoHtml from '../components/LogoHtml.astro';
+import LogoCss from '../components/LogoCss.astro';
+import LogoJs from '../components/LogoJs.astro';
+import LogoTailwind from '../components/LogoTailwind.astro';
+import LogoAstro from '../components/LogoAstro.astro';
+
+
 ---
 
 <div class="bg-[#060814] bg-center px-4">
@@ -13,9 +27,60 @@ import HabilitesCard from '../components/HabilitesCard.astro';
         </header>
         
         <div class="flex flex-col gap-20">
-            <HabilitesCard/>
-            <HabilitesCard/>
-            <HabilitesCard/>
+
+            <HabilitesCard
+            title="Graphic"
+            subtitle="Design"
+
+            description="I transform ideas into striking images, from distinctive logos to promotional materials and social media graphics, effectively communicating your message in a memorable way."
+
+            services={["Branding", "Social Media", "Logo Design", "User Interface UI/UX"]}
+            
+            imgurl="/pentool-icon.webp"
+            imgDescription="Pen Tool Icon 3D Image">
+
+                <li class="scale-75 self-center"><LogoPsd/></li>
+                <li class="scale-75 self-center"><LogoAi/></li>
+                <li class="scale-75 self-center"><LogoCorel/></li>
+                <li class="scale-75 self-center"><LogoFigma/></li>
+                
+            </HabilitesCard>
+
+            <HabilitesCard
+            title="Video"
+            subtitle="Editing"
+
+            description="I captivate your audience with immersive visual narratives, using After Effects and Premiere to create animations and videos that resonate authentically with your audience."
+
+            services={["Clip Editing", "Logo Intros", "Animated Stories"]}
+            
+            imgurl="/movie-icon.webp"
+            imgDescription="Movie Icon 3D Image">
+
+                <li class="scale-75 self-center"><LogoAfter/></li>
+                <li class="scale-75 self-center"><LogoPremier/></li>
+                
+            </HabilitesCard>
+
+            <HabilitesCard
+            title="Web"
+            subtitle="Development"
+
+            description="I establish a strong online presence by creating attractive and functional websites, specializing in landing pages and sites tailored to entrepreneurs and small businesses."
+
+            services={["Landing Pages", "Portfolios", "Digital Invitations"]}
+            
+            imgurl="/web-icon.webp"
+            imgDescription="Web Icon 3D Image">
+
+                <li class="scale-75 self-center"><LogoHtml/></li>
+                <li class="scale-75 self-center"><LogoCss/></li>
+                <li class="scale-75 self-center"><LogoJs/></li>
+                <li class="scale-75 self-center"><LogoTailwind/></li>
+                <li class="scale-75 self-center"><LogoAstro/></li>
+                
+            </HabilitesCard>
+
         </div>
         
 
