@@ -13,32 +13,32 @@ const { title, services, description, imgurl, subtitle, imgDescription } = Astro
 
 ---
 
-<article class="w-full flex">
+<article class="w-full grid gap-7 mx-auto md:gap-2 md:grid-cols-5 items-center">
 
-    <div class="flex flex-col">
+    <div class="order-2 gap-4 flex flex-col md:order-1 md:col-span-4 md:gap-0">
 
-        <h3 class="text-2xl font-normal text-white mb-1">{title} <span class="text-[#05F26CF2]">{subtitle}</span></h3>
+        <h3 class="text-center text-3xl font-normal text-white md:mb-1 md:text-2xl md:text-left">{title} <span class="text-[#05F26CF2]">{subtitle}</span></h3>
 
-        <span class="text-lg font-extralight text-white mb-3">
+        <span class="text-center text-xl font-extralight text-white md:mb-3 md:text-lg md:text-left">
             {description}
         </span>
 
-       <ul class="flex flex-wrap gap-2 mb-2">
+       <ul class="flex flex-wrap justify-center gap-4 md:mb-3 md:gap-2 md:justify-start">
             {
                 services.map( servicio => (
-                <li><span class="text-white font-extralight text-sm py-0.5 px-4 bg-[#060814] rounded-full border-[1px] border-white">{servicio}</span></li>
+                <li><span class="text-white font-extralight text-base py-0.5 px-4 bg-[#060814] rounded-full border-[1px] border-white md:text-sm">{servicio}</span></li>
                 ))
             };
        </ul>
 
-       <ul class="flex flex-row">
+       <ul class="flex flex-row justify-center md:justify-start">
             <slot />
        </ul>
         
     </div>
         
-    <div class="content-center">
-        <img class="w-[26rem]" src={imgurl} alt={imgDescription}>
+    <div class="flex justify-center order-1 md:order-2 md:col-span-1">
+        <img class="" src={imgurl} alt={imgDescription} width="200" height="200">
     </div>
 
 </article>
