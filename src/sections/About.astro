@@ -4,29 +4,30 @@
 <section class="bg-[#6805F2] px-4">
     
     <div class="max-w-screen-md mx-auto pb-24">
-
+        
         <h3 class="font-medium text-3xl text-white">
             About Me 
         </h3>
 
-        <div class="grid grid-cols-2 items-center">
-            <div class="flex flex-col justify-center gap-6">
+        <div class="grid md:grid-cols-2 items-center">
+            
+            <div class="flex flex-col order-2 justify-center gap-6 md:order-1">
 
-                <span class="font-extralight text-white">
+                <span class="font-extralight text-white text-sm">
                     Me llamo William Joel Cardoza Dubon, pero puedes llamarme Will. Desde que era niño, encontré alegría dibujando y creando en mis cuadernos, <strong class="text-[#FFC700]">una pasión que ha evolucionado para ayudar a negocios y emprendedores con mis diseños.</strong>   
                 </span>
     
-                <span class="font-extralight text-white">
+                <span class="font-extralight text-white text-sm">
                     Cuando no estoy trabajando, me gusta explorar y buscar inspiración en el mundo que me rodea, mientras que el cine, los videojuegos y la música alimentan mi creatividad. Pero lo que más disfruto es pasar tiempo con familiares y amigos, compartiendo risas y momentos inolvidables.  
                 </span>
     
-                <span class="font-extralight text-white">
+                <span class="font-extralight text-white text-sm">
                     Estoy emocionado de conectar contigo y compartir mi amor por el diseño. <strong class="text-[#FFC700]"> ¡Espero tener la oportunidad de trabajar juntos y también de convertirnos en amigos!</strong>
                 </span>
             </div>
     
-            <div>
-                <img class="w-80 aboute-img justify-center" src="/about-me.webp" alt="Fotografía sobre mí" width="200" height="200">
+            <div class="flex justify-center order-1 md:order-2">
+                <img class="w-72 aboute-img" src="/about-me.webp" alt="Fotografía sobre mí" width="200" height="200">
             </div>
         </div>
 
@@ -36,9 +37,6 @@
 
 <style>
     .aboute-img {
-        mask-image: linear-gradient(
-            #6805F2 80%,
-            transparent
-        )
+        mask-image: linear-gradient(to bottom, black 50%, rgba(0, 0, 0, 0.01) 90%);
     }
 </style>
