@@ -1,93 +1,86 @@
 ---
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
-  },
-]
+// const navItems = [
+//   {
+//     title: "Experiencia",
+//     label: "experiencia",
+//     url: "/#experiencia",
+//   },
+//   {
+//     title: "Proyectos",
+//     label: "proyectos",
+//     url: "/#proyectos",
+//   },
+//   {
+//     title: "Sobre mí",
+//     label: "sobre-mi",
+//     url: "/#sobre-mi",
+//   },
+//   {
+//     title: "Contacto",
+//     label: "contacto",
+//     url: "mailto:miduga@gmail.com",
+//   },
+// ]
 ---
 
-<header
-  class="fixed top-0 flex items-center justify-center w-full mx-auto mt-4"
-  style="z-index: 60"
->
-  <nav
-    class="flex px-3 text-sm font-light rounded-full text-white dark:text-gray-200 justify-center items-center"
-  >
-    <a href="/">
-        <img src="/logo-navbar.svg" alt="Logo willdu" width="100" height="100">
-    </a>
 
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-4 py-4 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
 
+<header>
+  <nav class="fixed w-full z-20 top-0 start-0" style="z-index: 60">
+    <div class="max-w-screen-md px-4 flex flex-wrap items-center justify-between mx-auto py-6 sm:px-0">
+  
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="/logo-navbar.svg" class="h-10" alt="willdu Logo">
+      </a>
+  
+      <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <!-- El botón del menú se oculta en dispositivos de escritorio -->
+        <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- El listado del navbar se ajusta a la derecha en dispositivos de escritorio -->
+      <div class="items-center justify-between w-full md:flex md:w-auto md:order-1 hidden" id="navbar-sticky">
+        <ul class="flex flex-col p-4 md:p-0 mt-4 font-light border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white md:bg-transparent md:ml-auto">
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#FFC700] md:p-0 ">Skills</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#FFC700] md:p-0 ">Portfolio</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#FFC700] md:p-0">About Me</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#FFC700] md:p-0">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbarMenu = document.getElementById("navbar-sticky");
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
-            } else {
-              item.classList.remove("text-yellow-500")
-            }
-          })
-        }
-      })
+    if (menuToggle && navbarMenu) {
+      menuToggle.addEventListener("click", function () {
+        navbarMenu.classList.toggle("hidden");
+      });
     }
 
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
-
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
+    // Ocultar el menú al cargar la página en dispositivos móviles
+    if (window.innerWidth < 768) { // Tamaño típico de dispositivos móviles
+      navbarMenu.classList.add("hidden");
     }
-  })
+  });
+
 </script>
 
 <style>
