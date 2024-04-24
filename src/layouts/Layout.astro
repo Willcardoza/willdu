@@ -5,8 +5,6 @@ import '@fontsource/kanit/400.css';
 import '@fontsource/kanit/500.css'; 
 import '@fontsource/kanit/600.css'; 
 import Header from '../components/Header.astro';
-import NoiseBg from '../components/NoiseBg.astro';
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
 
 interface Props {
 	description: string;
@@ -22,12 +20,11 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description}/>
 		<meta name="viewport" content="width=device-width" />
+		<meta name="theme-color" content="#05F26C">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
-		<ViewTransitions/>
 	</head>
 	<body>
-		<NoiseBg/>
 		<Header/>
 		<slot />
 	</body>
@@ -35,6 +32,18 @@ const { title, description } = Astro.props;
 <style is:global>
 	html {
 		font-family: 'Kanit', sans-serif;
-		background-color: #ddd;
+	}
+
+	body {
+		background-image: url("/bg-hero.svg");
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	@media screen and (width <= 1200px) {
+  		body {
+			background-size: auto;
+    	}
 	}
 </style>

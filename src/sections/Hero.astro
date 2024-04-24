@@ -1,8 +1,11 @@
 ---
-import Image from "astro/components/Image.astro";
+//import Image from "astro/components/Image.astro";
+import Picture from "astro/components/Picture.astro";
+import heroImage from "/public/hero-image-new.webp";
+
 ---
 
-<section class="bg-cover bg-center px-4 relative" style="background-image: url(/bg-hero.svg)">
+<section class="px-4 relative">
     <div class="max-w-screen-lg mx-auto z-40 grid gap-6 md:grid-cols-2 pt-32 md:gap-0 relative h-auto lg:h-[42rem]">
 
         <div class="flex flex-col w-full gap-5 mx-auto justify-center sm:w-3/4 md:w-5/6 z-30 lg:ml-32 md:ml-8 relative">
@@ -22,14 +25,7 @@ import Image from "astro/components/Image.astro";
         </div>
 
         <div class="flex justify-center z-20 lg:mr-32 md:mr-8 relative">
-            <Image 
-                src={"/hero-image.webp"}
-                alt="William Graphic Designer"
-                width={1080}
-                height={1080}
-                loading="lazy"
-            />
-            <!-- <img class="h-[30rem] md:h-auto" src="/hero-image.webp" alt="William Graphic Designer"> -->
+            <img class="h-[30rem] md:h-auto" src="/hero-image-new.webp" alt="William Graphic Designer" loading="eager">
         </div>
     </div>
 
